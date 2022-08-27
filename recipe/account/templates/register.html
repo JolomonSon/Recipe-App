@@ -16,8 +16,8 @@
             <div class="card-body">
             <form action="" method="post">
                 {% csrf_token %}
-                {{form}}
-                <a href="#" class="btn btn-success">Register</a>
+                {{form.as_p}}
+                <button type="submit" class="btn btn-success">Register</button>
             </form>
             </div>
             <div class="card-footer text-muted">
