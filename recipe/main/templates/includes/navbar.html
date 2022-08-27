@@ -25,10 +25,10 @@
     </form>
     <div style="margin-left:10px ;">
       {% if user.is_authenticated %}
-      <button class="btn btn-outline-danger" type="submit">Sign Out</button>
+      <a class="btn btn-outline-danger" href="{% url 'logout' %}" type="submit">Sign Out</a>
       {% else %}
-      <a class="btn btn-outline-dark" type="submit">Sign In</a>
-      <a class="btn btn-outline-white" type="submit">Sign Up</a>
+      <a class="btn btn-outline-dark" href="{% url 'login' %}" type="submit">Sign In</a>
+      <a class="btn btn-outline-white" href="{% url 'register' %}" type="submit">Sign Up</a>
       {% endif %}
     </div>
   </ul>
