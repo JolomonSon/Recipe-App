@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from .models import Recipe
 
 # Create your views here.
 def home(request):
-    return render(request, 'index.html')
+    recipes = Recipe.objects.all()
+    context = {'recipes':recipes}
+
+    return render(request, 'index.html', context)
 
 def about(request):
     return render(request, 'about.html')
