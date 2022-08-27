@@ -11,7 +11,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, "{} created successfully".format(username))
-            return redirect('home')
+            return redirect('login')
         else:
             messages.error(request, "Invalid form! Try Again.")
             form = CustomUserCreationForm()
