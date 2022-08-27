@@ -11,12 +11,11 @@
     <br>
     <div class="container">
         {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-            {% endfor %}  
-        </ul>   
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}}">{{message}}</div>
+            {% endfor %}
         {% endif %}
+        <br>
         <div class="card text-center m-4">
             <div class="card-header">
                 <h5 class="card-title">Create an account</h5>
@@ -31,7 +30,7 @@
             </form>
             </div>
             <div class="card-footer text-muted">
-                &copy;Recipes
+                All Right Reserved Recipe App &copy;2022
             </div>
         </div>
     </div>

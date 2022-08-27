@@ -13,7 +13,7 @@ def register(request):
             messages.success(request, "{} created successfully".format(username))
             return redirect('home')
         else:
-            messages.error(request, "Invalid form!\nTry Again.")
+            messages.error(request, "Invalid form! Try Again.")
             form = CustomUserCreationForm()
 
     return render(request, 'register.html', {'form':form})

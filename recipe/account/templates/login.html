@@ -10,6 +10,11 @@
 <body>
     <br>
     <div class="container">
+        {% if messages %}  
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}}">{{message}}</div>
+            {% endfor %}
+        {% endif %}
         <div class="card text-center m-4">
             <div class="card-header">
                 <h5 class="card-title">Sign In</h5>
@@ -24,7 +29,7 @@
             </form>
             </div>
             <div class="card-footer text-muted">
-                &copy;Recipes
+                All Right Reserved Recipe App &copy;2022
             </div>
         </div>
     </div>
