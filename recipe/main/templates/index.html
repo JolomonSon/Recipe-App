@@ -5,7 +5,7 @@
     <h5>Recipe's of your choice</h5><br>
     <div class="card" style="width: 18rem;">
         {% for recipe in recipes %}
-        <img src="..." class="card-img-top" alt="...">
+        <img src="{{recipe.img.url}}" class="card-img-top" alt="{{recipe.name}}_image">
         <div class="card-body">
           <h5 class="card-title">{{recipe.title}}</h5>
           <p class="card-text">{{recipe.description}}</p>
