@@ -1,19 +1,12 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe App</title>
-</head>
-<body>
-    <h1><center>Home page</center></h1>
-    <div>
-        <p>Recipe's of your choice</p>
-        <ul>
-            {% for recipe in recipes %}
-                <li>{{recipe}}</li>
-            {% endfor %}
-        </ul>
-    </div>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<h1><center>Home page</center></h1>
+<div>
+    <p>Recipe's of your choice</p>
+    <ul>
+        {% for recipe in recipes %}
+            <li>{{recipe}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
