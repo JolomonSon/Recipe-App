@@ -4,13 +4,15 @@
 <h3><center>Home page</center></h3>
     <h5>Recipe's of your choice</h5><br>
     {% for recipe in recipes %}
-    <div class="card" style="width: 18rem;display: inline-flex;margin:15px;padding:10px;height:320px">
+    <div class="card" style="width: 18rem;display: inline-flex;margin:15px;padding:10px;height:350px">
         <img src="{{recipe.img.url}}" style="height: 200px;" class="card-img-top" alt="{{recipe.name}}_image">
         <div class="card-body">
           <h5 class="card-title">{{recipe.title}}</h5>
           <p class="card-text">{{recipe.description}}</p>
           <span style="color: crimson;">${{recipe.price}}</span>
-          <a href="#" class="btn btn-primary">Check Recipe</a>
+          <div class="d-flex justify-content-end">
+            <a href="#" class="btn btn-primary">View More</a>
+          </div>
         </div>
     </div>
     {% endfor %}
