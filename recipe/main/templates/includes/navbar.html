@@ -25,7 +25,7 @@
     </form>
     <div style="margin-left:10px ;">
       {% if user.is_authenticated %}
-      <span>Hello, {{user.username}}</span>
+      <span><a href="{% url 'profile' %}" style="text-decoration: none;">Hello, {{user.username}}</a></span>
       <a class="btn btn-outline-danger" href="{% url 'logout' %}" type="submit">Sign Out</a>
       {% else %}
       <a class="btn btn-outline-dark" href="{% url 'login' %}" type="submit">Sign In</a>
