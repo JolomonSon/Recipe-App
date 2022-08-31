@@ -8,10 +8,10 @@ from .models import Recipe
 # Create your views here.
 def home(request):
     recipes = Recipe.objects.all()
-    return render(request, 'index.html', {'recipes':recipes})
+    return render(request, 'main/index.html', {'recipes':recipes})
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'main/about.html')
 
 class RecipeDetailView(DetailView):
     model = Recipe
