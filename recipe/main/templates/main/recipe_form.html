@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<br>
+<div class="container">
+    {% if messages %}  
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">{{message}}</div>
+        {% endfor %}
+    {% endif %}
+    <div class="card text-center m-4">
+        <div class="card-header">
+            <h5 class="card-title">Create Recipe</h5>
+        </div>
+        <div class="card-body">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form|crispy}}
+            <br>
+            <button type="submit" class="btn btn-dark btn-block">Create</button>
+        </form>
+        </div>
+        <div class="card-footer text-muted">
+            All Right Reserved Recipe App &copy;2022
+        </div>
+    </div>
+</div>
+{% endblock content %}
