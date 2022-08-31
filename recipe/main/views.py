@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from  django.views.generic import DetailView, CreateView, ListView, DeleteView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from .models import Recipe
 
@@ -19,7 +20,7 @@ def profile(request):
 class RecipeDetail(DetailView):
     model = Recipe
 
-class RecipeDelete(DetailView):
+class RecipeDelete(DetailView, LoginRequiredMixin, UserPassesTestMixin):
     model = Recipe
     success_url = 'home'
 
@@ -27,7 +28,7 @@ class RecipeDelete(DetailView):
         recipe = self.get_object()
         return self.request.user == recipe.owner
 
-class RecipeUpdateView(UpdateView):
+class RecipeUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
     model = Recipe
     fields = ['name', 'description', 'price', 'image']
 
@@ -39,7 +40,7 @@ class RecipeUpdateView(UpdateView):
         form.instance.owner = self.request.user
         return super().form_valid(form)
 
-class RecipeCreate(CreateView):
+class RecipeCreate(CreateView, LoginRequiredMixin):
     model = Recipe
     fields = ['name', 'description', 'price', 'image']
 
