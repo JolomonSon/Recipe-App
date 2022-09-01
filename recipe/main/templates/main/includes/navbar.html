@@ -3,16 +3,11 @@
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
       </li>
+      {% if user.is_authenticated %}
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Add Recipe</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Recipe 1</a></li>
-          <li><a class="dropdown-item" href="#">Recipe 2</a></li>
-          <li><a class="dropdown-item" href="#">Recipe 3</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Other Recipe</a></li>
-        </ul>
+        <a class="nav-link " href="{% url 'create-recipe' %}" role="button" aria-expanded="false">Add Recipe</a>
       </li>
+      {% endif %}
       <li class="nav-item">
         <a class="nav-link" href="{% url 'about' %}">About</a>
       </li>

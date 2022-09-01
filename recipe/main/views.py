@@ -38,7 +38,7 @@ class RecipeUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
 
 class RecipeCreateView(CreateView, LoginRequiredMixin):
     model = Recipe
-    fields = ['name', 'description', 'price', 'image']
+    fields = ['name', 'description', 'price', 'image', 'owner']
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
