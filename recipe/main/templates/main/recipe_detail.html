@@ -11,8 +11,10 @@
       <p class="card-text" style="text-align: right;"><small class="text-muted">Last updated {{recipe.date}} ago</small></p>
     </div>
 </div>
+{% if object.owner == user %}
 <div class="container">
     <a href="{% url 'update-recipe' recipe.pk %}" class="btn btn-dark">Update</a>
     <a href="{% url 'delete-recipe' recipe.pk %}" class="btn btn-danger">Delete</a>
 </div>
+{% endif %}
 {% endblock content %}
