@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="container">
+<h2><center>{{recipe.name}} Recipe</center></h2>
+<br>
+<div class="card mb-3">
+    <img class="card-img-top" src="" style="max-width: 50%;height:50%;margin: 10px;" alt="{{recipe.image}}_image">
+    <div class="card-body">
+      <h5 class="card-title">{{recipe.name}}</h5>
+      <p class="card-text">{{recipe.description}}</p>
+      <p class="card-text" style="text-align: right;"><small class="text-muted">Last updated {{recipe.date}} ago</small></p>
+    </div>
+</div>
+<div class="container">
+    <button class="btn btn-dark" type="submit">Update</button>
+    <button class="btn btn-danger" type="submit">Delete</button>
+</div>
+{% endblock content %}
