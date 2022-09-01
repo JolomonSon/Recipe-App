@@ -7,7 +7,7 @@
     <div class="card" style="width: 17rem;display: inline-flex;margin:15px;padding:10px;height:330px">
         <img src="{{recipe.image.url}}" style="height: 200px;" class="card-img-top" alt="{{recipe.name}}_image">
         <div class="card-body">
-          <h5 class="card-title">{{recipe.title}}</h5>
+          <h5 class="card-title">{{recipe.name}}</h5>
           <span style="color: crimson;">${{recipe.price}}</span>
           <div class="d-flex justify-content-end">
             <a href="{% url 'recipe-detail' recipe.pk %}" class="btn btn-primary">View More</a>
