@@ -10,7 +10,7 @@
           <h5 class="card-title">{{recipe.title}}</h5>
           <span style="color: crimson;">${{recipe.price}}</span>
           <div class="d-flex justify-content-end">
-            <a href="#" class="btn btn-primary">View More</a>
+            <a href="{% url 'recipe-detail' recipe.pk %}" class="btn btn-primary">View More</a>
           </div>
         </div>
     </div>
