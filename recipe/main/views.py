@@ -16,9 +16,9 @@ def about(request):
 class RecipeDetailView(DetailView):
     model = Recipe
 
-class RecipeDeleteView(DetailView, LoginRequiredMixin, UserPassesTestMixin):
+class RecipeDeleteView(DeleteView, LoginRequiredMixin, UserPassesTestMixin):
     model = Recipe
-    success_url = 'home'
+    success_url = reverse_lazy('home')
 
     def test_func(self):
         recipe = self.get_object()

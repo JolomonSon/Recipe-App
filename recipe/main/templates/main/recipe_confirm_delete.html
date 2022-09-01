@@ -1,30 +1,23 @@
 {% extends 'main/base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 <div class="container">
 <h2><center>{{recipe.name}} Recipe</center></h2>
 <br>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-    Delete
-  </button>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{recipe.name}}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form|crispy}}
+    <div class="container">
+        Do you want to delete {{recipe.name}}
+        <br><br>
+        <div class="container">
+            <button type="submit" class="btn btn-danger">
+                Yes
+            </button>
+            <a href="{% url 'recipe-detail' recipe.pk %}" class="btn btn-secondary">
+                Close
+            </a>
         </div>
-        <div class="modal-body">
-          Do you want to delete {{recipe.name}}
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-          <button type="button" class="btn btn-danger">Yes</button>
-        </div>
-      </div>
     </div>
-  </div>
+</form>
 {% endblock content %}

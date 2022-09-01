@@ -12,7 +12,7 @@
     </div>
 </div>
 <div class="container">
-    <a href="{% url 'update-recipe' recipe.pk %}" class="btn btn-dark" type="submit">Update</a>
-    <a href="" class="btn btn-danger" type="submit">Delete</a>
+    <a href="{% url 'update-recipe' recipe.pk %}" class="btn btn-dark">Update</a>
+    <a href="{% url 'delete-recipe' recipe.pk %}" class="btn btn-danger">Delete</a>
 </div>
 {% endblock content %}
